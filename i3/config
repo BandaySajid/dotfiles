@@ -187,7 +187,7 @@ bar {
 		  status_command exec /home/sajidbanday/.config/i3status/net-speed.sh
 }
 
-#----- added by my -----
+#----- added by me -----
 exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 --rate 100 --right-of eDP-1-0
 exec --no-startup-id xrandr --output eDP-1-0 --mode 1920x1080 --rate 120 --primary --left-of HDMI-0
 
