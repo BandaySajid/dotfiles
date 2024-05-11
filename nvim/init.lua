@@ -74,7 +74,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 
 -- for formatting code using prettier and gofmt for golang
 
-vim.api.nvim_set_keymap('n', '<leader>F', [[:%!prettier --stdin-filepath % --single-quote --tab-width 3<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>F', [[:%!prettier --stdin-filepath % --single-quote --tab-width 2<CR>]], { noremap = true, silent = true })
 
 -- TREESITTER
 require'nvim-treesitter.configs'.setup {
@@ -219,8 +219,8 @@ vim.keymap.set("i", "jj", "<Esc>")
 
 -- vim.opt.guicursor = "i:block"
 
-vim.opt.tabstop = 3
-vim.opt.shiftwidth = 3
+-- vim.opt.tabstop = 3
+-- vim.opt.shiftwidth = 3
 vim.opt.number = false
 vim.opt.relativenumber = true
 vim.opt.swapfile = false
@@ -238,3 +238,18 @@ vim.o.timeoutlen = 300
 --vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 vim.o.clipboard = "unnamedplus"
+
+vim.opt.expandtab = false
+vim.opt.shiftround = true
+vim.opt.smartindent = true
+vim.opt.autoindent = true
+
+local tabwidth = 2
+vim.opt.tabstop = tabwidth
+vim.opt.shiftwidth = tabwidth
+vim.opt.softtabstop = tabwidth
+
+-- Set global indentation settings
+vim.cmd[[
+  autocmd BufEnter * setlocal shiftwidth=2 tabstop=2 softtabstop=2
+]]
